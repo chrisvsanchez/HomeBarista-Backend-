@@ -3,6 +3,19 @@ Rails.application.routes.draw do
   resources :add_post_to_feeds
   resources :feeds
   resources :posts
-  resources :users
+  # resources :users
+
+  # User Routes 
+  get '/users', to: 'users#index' 
+
+  # Feed
+
+
+  #Posts
+
+
+  # Reviews 
+
+  
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

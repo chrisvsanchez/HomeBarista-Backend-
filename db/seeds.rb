@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
 User.destroy_all
 Post.destroy_all
 Review.destroy_all
@@ -14,12 +15,13 @@ AddPostToFeed.destroy_all
 puts "Creating users"
 10.times do 
     User.create(
-    bio:"Faker::Quote.famous_last_words",
+    bio: "I love COFFEE!!! ",
     email:Faker::Internet.email,
     password:"123",
     current_coffee_beans:"#{Faker::Coffee.blend_name}blend from #{Faker::Coffee.origin}",
     coffee_medium:"Espresso",
     profile_img:Faker::Avatar.image,
+    name: Faker::Name.name
 )
 end
 puts "Users Complete!"
