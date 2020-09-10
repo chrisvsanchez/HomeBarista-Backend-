@@ -1,5 +1,5 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :name, :email, :current_coffee_beans, :coffee_medium, :profile_img
+  attributes :id, :bio, :name, :email, :current_coffee_beans, :coffee_medium, :profile_img
   
   has_many :posts
   has_many :reviews

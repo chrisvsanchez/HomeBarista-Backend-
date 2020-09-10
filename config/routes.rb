@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   # User Routes 
   get '/users', to: 'users#index' 
-
+  get '/users/:id', to: 'users#show'
   # Feed
 
 
