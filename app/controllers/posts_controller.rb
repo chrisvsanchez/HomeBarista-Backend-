@@ -11,9 +11,11 @@ class PostsController < ApplicationController
     end
 
     def create
+        post = Post.create(post_params)
+        feed_id = post.user.feed.id 
+        AddPostToFeed.create(post_id: post.id, feed_id: feed_id)
+        render json: post 
         # byebug
-        card = Post.create(post_params)
-          render json: card 
     end
 
     def destroy
