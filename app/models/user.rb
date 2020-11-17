@@ -5,5 +5,5 @@ has_many :addPostToFeed, through: :posts
 has_many :reviews, through: :posts
 has_one :feed 
 validates :email, uniqueness: {case_sensitive: false}
-
+has_secure_password 
 end

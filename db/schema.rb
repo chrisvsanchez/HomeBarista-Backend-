@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 2020_09_06_033437) do
     t.string "bio"
     t.string "name"
     t.string "email"
-    t.string "password"
+    t.string "password_digest"
     t.string "current_coffee_beans"
     t.string "coffee_medium"
     t.string "profile_img"

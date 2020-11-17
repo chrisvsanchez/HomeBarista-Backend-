@@ -3,14 +3,13 @@ Rails.application.routes.draw do
   resources :add_post_to_feeds
   resources :feeds
   resources :posts
-  # resources :users
+  resources :users, only:[:index, :show, :create, :destroy, :update]
 
-  # User Routes 
-  get '/users', to: 'users#index' 
-  get '/users/:id', to: 'users#show'
+
+  # User Routes   
+    post "/login", to: "users#login"
+    get "/autologin", to: "users#autologin"
   # Feed
-
-
   #Posts
 
 
