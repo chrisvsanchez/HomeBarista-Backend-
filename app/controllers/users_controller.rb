@@ -40,7 +40,7 @@ class UsersController < ApplicationController
     end
 
     def autologin
-        byebug
+    
         # extract auth header
         auth_header = request.headers['Authorization']
         # get the token from the headers
