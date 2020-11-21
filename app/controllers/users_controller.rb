@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    skip_before_action :authenticate, only: [:create, :login]
+    # skip_before_action :authenticate, only: [:create, :login]
    
     def index 
         users = User.all
@@ -29,9 +29,10 @@ class UsersController < ApplicationController
 
     def login 
        usery = User.find_by(email: params[:email])
-        if usery && usery.authenticate(params[:password])
-            token = JWT.encode({user_id: usery.id}, "so_secret", 'HS256')
-     
+       if usery && usery.authenticate(params[:password])
+        token = JWT.encode({user_id: usery.id}, "so_secret", 'HS256')
+        
+        
             render json: {user: UserSerializer.new(usery), token:token}
         else
             render json: {message: "Invalid username or password"}, status: :unauthorized 
@@ -39,6 +40,7 @@ class UsersController < ApplicationController
     end
 
     def autologin
+        byebug
         # extract auth header
         auth_header = request.headers['Authorization']
         # get the token from the headers
@@ -66,7 +68,7 @@ class UsersController < ApplicationController
     private 
 
     def user_params 
-        params.permit(:name, :email)
+        params.permit(:name, :email, :password, :address)
     end
   
 end
