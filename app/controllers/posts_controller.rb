@@ -11,14 +11,14 @@ class PostsController < ApplicationController
     end
 
     def create
- 
         post = Post.create(post_params)
         byebug
-        feed_id = post.user.feed.id 
-        byebug
+        feed_id = Feed.find(params[:user_id]) 
+        # feed id === users id, thats why it works...must refactor to properly access feed id Through relationship
+        # feed_id = post.user.feed.id 
+
         AddPostToFeed.create(post_id: post.id, feed_id: feed_id)
         render json: post 
-        # byebug
     end
 
     def destroy
