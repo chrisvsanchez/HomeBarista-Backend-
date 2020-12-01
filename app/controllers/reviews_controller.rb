@@ -1,4 +1,13 @@
 class ReviewsController < ApplicationController
-    belongs_to :post  
-    belongs_to :user
+
+
+    def index
+        reviews = Review.all
+        render json: reviews
+    end
+
+    def create
+
+        byebug
+    end
 end
