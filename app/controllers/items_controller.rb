@@ -2,9 +2,16 @@ class ItemsController < ApplicationController
 
 
     def create 
+        # byebug
         image = Cloudinary::Uploader.upload(params[:image])
-        video = Cloudinary::Uploader.upload(params[:video], :resource_type => :video)
-        item=Item.create(image: image["url"], video["url"])
+     
+       
+        item = Item.create(image: image["url"])
+       
         render json: item
+    end
+
+    def destroy 
+        Cloudinary::Uploader.destroy(id, :resource_type => :video)
     end
 end

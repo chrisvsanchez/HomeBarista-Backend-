@@ -33,7 +33,6 @@ ActiveRecord::Schema.define(version: 2020_12_08_014617) do
 
   create_table "items", force: :cascade do |t|
     t.string "image"
-    t.string "video"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
