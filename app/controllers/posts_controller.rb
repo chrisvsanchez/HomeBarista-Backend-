@@ -12,7 +12,8 @@ class PostsController < ApplicationController
 
     def create
         post = Post.create(post_params)
-        # byebug
+        # byebugc
+        
         feed_id = Feed.find(params[:user_id]) 
         # feed id === users id, thats why it works...must refactor to properly access feed id Through relationship
         # feed_id = post.user.feed.id 

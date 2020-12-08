@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :feeds
   resources :posts
   resources :users, only:[:index, :show, :create, :destroy, :update]
-
+  resources :items, only: [:create]
 
   # User Routes   
     post "/login", to: "users#login"
