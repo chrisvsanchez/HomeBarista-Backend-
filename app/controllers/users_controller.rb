@@ -60,11 +60,27 @@ class UsersController < ApplicationController
     end
 
     def update 
+        byebug
         user = User.find(params[:id])
         user.update(user_params)
         render json: user
     end
+    def profile_picture
+        auth_header = request.headers['Authorization']
+        # get the token from the headers
+        token = auth_header.split(' ')[1]
+        #decode token using JWT library
+        decoded_token = JWT.decode(token, 
+        "so_secret", true, {algorthim: 'HS256'})
+        #get user id from the decoded token 
+        user_id = decoded_token[0]["user_id"]
+        byebug
+        user =User.find_by(id: user_id)
+        byebug 
 
+        user.update(profile_img: params["photo"])
+        render json: user
+    end
     private 
 
     def user_params 

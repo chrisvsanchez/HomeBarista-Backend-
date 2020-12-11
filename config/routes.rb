@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   # User Routes   
     post "/login", to: "users#login"
     get "/autologin", to: "users#autologin"
-  # Feed
+    patch "/ProfilePicture", to: "users#profile_picture"
+  # Feeds
   #Posts
 
 
