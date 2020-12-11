@@ -74,9 +74,9 @@ class UsersController < ApplicationController
         "so_secret", true, {algorthim: 'HS256'})
         #get user id from the decoded token 
         user_id = decoded_token[0]["user_id"]
-        byebug
+     
         user =User.find_by(id: user_id)
-        byebug 
+  
 
         user.update(profile_img: params["photo"])
         render json: user
