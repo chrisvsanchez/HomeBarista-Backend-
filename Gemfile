@@ -41,3 +41,4 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'cloudinary'
 gem "jwt", "~> 2.2"
+gem 'dotenv-rails', groups: [:development, :test]
