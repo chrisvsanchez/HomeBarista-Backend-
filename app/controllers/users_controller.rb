@@ -14,12 +14,17 @@ class UsersController < ApplicationController
     end
 
     def create 
+        byebug
         user = User.create(
          email: params[:email],
          name: params[:name],
-         address: params[:address],
-         password: params[:password]
+         bio: params[:bio],
+         password: params[:password],
+         current_coffee_beans: params[:currentCoffeeBeans],
+         coffee_medium: params[:coffeeMedium], profile_img: Faker::Avatar.image,
         )
+        Feed.create(user_id: user.id)
+        byebug
             if user.valid?
                 token = JWT.encode({user_id: user.id}, "so_secret", 'HS256')
         

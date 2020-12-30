@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     post "/login", to: "users#login"
     get "/autologin", to: "users#autologin"
     patch "/ProfilePicture", to: "users#profile_picture"
+    post "/signup", to: "users#create"
   # Feeds
   #Posts
 
