@@ -1,5 +1,4 @@
 class FeedSerializer < ActiveModel::Serializer
-  attributes :id, :user
-  has_many :posts
+  attributes :id, :user, :posts 
 
 end

@@ -5,5 +5,5 @@ class UserSerializer < ActiveModel::Serializer
   has_many :posts
   has_many :reviews
   has_many :reviews, through: :posts
-  has_one :feed 
+  # has_one :feed 
 end

@@ -1,2 +1,4 @@
 class AddPostToFeedsController < ApplicationController
+
+
 end
