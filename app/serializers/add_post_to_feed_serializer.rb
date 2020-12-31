@@ -1,3 +1,3 @@
 class AddPostToFeedSerializer < ActiveModel::Serializer
-  attributes :id, :posts
+  attributes :id
 end
