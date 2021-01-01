@@ -7,10 +7,10 @@ Rails.application.routes.draw do
   resources :items, only: [:create]
 
   # User Routes   
-    post "/login", to: "users#login"
-    get "/autologin", to: "users#autologin"
-    patch "/ProfilePicture", to: "users#profile_picture"
-    post "/signup", to: "users#create"
+    post "https://home-barista-api.herokuapp.com/login", to: "users#login"
+    get "https://home-barista-api.herokuapp.com/autologin", to: "users#autologin"
+    patch "https://home-barista-api.herokuapp.com/ProfilePicture", to: "users#profile_picture"
+    post "https://home-barista-api.herokuapp.com/signup", to: "users#create"
   # Feeds
   #Posts
 
