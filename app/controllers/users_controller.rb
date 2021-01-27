@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     end
 
     def create 
-        byebug
+        # byebug
         user = User.create(
          email: params[:email],
          name: params[:name],
@@ -24,7 +24,7 @@ class UsersController < ApplicationController
          coffee_medium: params[:coffeeMedium], profile_img: Faker::Avatar.image,
         )
         Feed.create(user_id: user.id)
-        byebug
+        # byebug
             if user.valid?
                 token = JWT.encode({user_id: user.id}, "so_secret", 'HS256')
         
@@ -68,7 +68,7 @@ class UsersController < ApplicationController
     end
 
     def update 
-        byebug
+        # byebug
         user = User.find(params[:id])
         user.update(user_params)
         render json: user
